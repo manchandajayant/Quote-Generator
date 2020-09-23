@@ -29,4 +29,13 @@ async function getQuote() {
 //On Load
 getQuote();
 
-function newQuoteFunction() {}
+function tweetQuote() {
+  const quote = quoteText.innerText;
+  const author = quoteText.innerText;
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${quote} - ${author}`;
+  window.open(twitterUrl, "_blank");
+}
+
+// Event Listeners
+newQuoteBtn.addEventListener("click", getQuote);
+twitterBtn.addEventListener("click", tweetQuote);
